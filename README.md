@@ -59,3 +59,15 @@ Asegúrate de definir las siguientes variables de entorno en un archivo `.env` e
 - `MONGO_PORT`: Puerto en el que se ejecutará MongoDB.
 - `JWT_SECRET`: Secreto para la autenticación JWT.
 - `MONGO_URI_DOCKER`: URL para que la aplicación de Node.js en Docker se conecte con el contenedor de Mongo.
+- `ADMIN_EMAIL`: Correo para administrador que se creará al iniciar el proyecto.
+- `ADMIN_PASSWORD`: Contraseña para administrador que se creará al iniciar el proyecto.
+
+## Pruebas Automatizadas
+
+Este proyecto utiliza Jest para las pruebas automatizadas. Para ejecutar todas las pruebas, simplemente usa el comando:
+
+```bash
+npm t
+```
+
+Esto ejecutará el conjunto de pruebas y mostrará los resultados en la terminal.
