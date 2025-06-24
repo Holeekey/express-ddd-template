@@ -17,4 +17,7 @@ export class MongoCredentialsRepository implements CredentialsRepository {
     if (!odmCredentials) return Optional.empty()
     return Optional.of(odmCredentials)
   }
+  async count(): Promise<number> {
+    return CredentialsModel.countDocuments()
+  }
 }
