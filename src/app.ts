@@ -4,18 +4,18 @@ import envConfig from './core/infra/env/env-config'
 import mongoose from 'mongoose'
 import { userRouter } from './user/infra/routes/user.router'
 import { MongoCredentialsRepository } from './auth/infra/repository/mongo/credentials.repository'
-import { UuidGenerator } from './core/infra/uuid/uuid-generator'
 import { RegisterService } from './auth/app/services/register/register.service'
 import { JwtGenerator } from './core/infra/jwt/jwt-generator'
 import { Sha256Encryptor } from './core/infra/encryptors/sha-256/sha256-encryptor'
 import { ExceptionDecorator } from './core/app/decorators/exception.decorator'
 import { Role } from './auth/app/models/credentials'
+import { ObjectIdGenerator } from './core/infra/object-id/object-id-generator'
 
 const credentialsRepo = new MongoCredentialsRepository()
 
 const createAdmin = async () => {
   const registerService = new RegisterService(
-    new UuidGenerator(),
+    new ObjectIdGenerator(),
     new JwtGenerator(),
     new Sha256Encryptor(),
     credentialsRepo

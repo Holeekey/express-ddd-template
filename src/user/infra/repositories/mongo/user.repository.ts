@@ -17,7 +17,7 @@ export class MongoUserRepository implements UserRepository {
     if (!odmUser) return Optional.empty()
     return Optional.of(
       makeUser({
-        id: odmUser.id,
+        id: odmUser._id.toString(),
         firstName: odmUser.firstName,
         lastName: odmUser.lastName,
         email: odmUser.email,
